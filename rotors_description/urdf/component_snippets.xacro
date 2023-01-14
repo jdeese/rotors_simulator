@@ -54,7 +54,7 @@
           <geometry>
             <xacro:insert_block name="geometry" />
           </geometry>
-          <material name="red" />
+          <material name="Blue" />
         </visual>
       </xacro:if>
       <inertial>
@@ -692,7 +692,7 @@
   </xacro:macro>
 
   <!-- VI-Sensor Macro -->
-  <xacro:macro name="vi_sensor_macro" params="namespace parent_link enable_cameras enable_depth enable_ground_truth *origin">
+  <xacro:macro name="vi_sensor_macro" params="namespace parent_link enable_cameras enable_depth enable_ground_truth *origin enable_visual">
     <!-- Vi Sensor Link -->
     <link name="${namespace}/vi_sensor_link">
       <collision>
@@ -702,12 +702,16 @@
         </geometry>
       </collision>
 
-      <visual>
-        <origin xyz="0 0 0" rpy="0 0 0" />
-        <geometry>
-          <mesh filename="package://rotors_description/meshes/vi_sensor.dae" scale="1 1 1" />
-        </geometry>
-      </visual>
+      <xacro:if value="${enable_visual}">
+        <visual>
+          <origin xyz="0 0 0" rpy="0 0 0" />
+          <geometry>
+            <mesh filename="package://rotors_description/meshes/vi_sensor.dae" scale="1 1 1" />
+          </geometry>
+        </visual>
+      </xacro:if>
+
+    
 
       <inertial>
         <mass value="0.13" />
