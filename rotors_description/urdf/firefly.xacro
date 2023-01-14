@@ -24,12 +24,12 @@
   <xacro:property name="namespace" value="$(arg namespace)" />
   <xacro:property name="rotor_velocity_slowdown_sim" value="10" />
   <xacro:property name="use_mesh_file" value="true" />
-  <xacro:property name="mesh_file" value="package://rotors_description/meshes/firefly.dae" />
+  <xacro:property name="mesh_file" value="package://rotors_description/meshes/firefly.dae" /> <!-- JDS: 20230113_F550_AROB_simplifiedv3_noprops.dae -->
   <xacro:property name="mass" value="1.5" /> <!-- [kg] -->
   <xacro:property name="body_width" value="0.1" /> <!-- [m] -->
   <xacro:property name="body_height" value="0.16" /> <!-- [m] -->
   <xacro:property name="mass_rotor" value="0.005" /> <!-- [kg] -->
-  <xacro:property name="arm_length" value="0.215" /> <!-- [m] -->
+  <xacro:property name="arm_length" value="0.28" /> <!-- changing this changes behaviour and visualization JDS:"0.215"	[m] -->
   <xacro:property name="rotor_offset_top" value="0.037" /> <!-- [m] -->
   <xacro:property name="radius_rotor" value="0.1" /> <!-- [m] -->
   <xacro:property name="motor_constant" value="8.54858e-06" /> <!-- [kg m/s^2] -->
@@ -83,7 +83,7 @@
     motor_number="0"
     rotor_drag_coefficient="${rotor_drag_coefficient}"
     rolling_moment_coefficient="${rolling_moment_coefficient}"
-    color="Red"
+    color="Black" 
     use_own_mesh="false"
     mesh="">
     <origin xyz="${cos30*arm_length} ${sin30*arm_length} ${rotor_offset_top}" rpy="0 0 0" />
@@ -112,7 +112,8 @@
     <xacro:insert_block name="rotor_inertia" />
   </xacro:vertical_rotor>
 
-  <xacro:vertical_rotor robot_namespace="${namespace}"
+  <xacro:vertical_rotor 
+    robot_namespace="${namespace}"
     suffix="back_left"
     direction="ccw"
     motor_constant="${motor_constant}"
@@ -126,14 +127,15 @@
     motor_number="2"
     rotor_drag_coefficient="${rotor_drag_coefficient}"
     rolling_moment_coefficient="${rolling_moment_coefficient}"
-    color="Blue"
+    color="Yellow"
     use_own_mesh="false"
     mesh="">
     <origin xyz="-${cos30*arm_length} ${sin30*arm_length} ${rotor_offset_top}" rpy="0 0 0" />
     <xacro:insert_block name="rotor_inertia" />
   </xacro:vertical_rotor>
 
-  <xacro:vertical_rotor robot_namespace="${namespace}"
+  <xacro:vertical_rotor
+    robot_namespace="${namespace}"
     suffix="back_right"
     direction="cw"
     motor_constant="${motor_constant}"

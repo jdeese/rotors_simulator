@@ -31,9 +31,11 @@ struct Axes {
   int roll;
   int pitch;
   int thrust;
+  int yaw; //JDS
   int roll_direction;
   int pitch_direction;
   int thrust_direction;
+  int yaw_direction; //JDS
 };
 
 struct Buttons {
@@ -49,6 +51,7 @@ struct Max {
   double v_xy;
   double roll;
   double pitch;
+  double yaw;  //JDS
   double rate_yaw;
   double thrust;
 };
