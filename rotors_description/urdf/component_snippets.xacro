@@ -713,7 +713,7 @@
       </visual>
 
       <inertial>
-        <mass value="0.13" />
+        <mass value="0.013" />
         <origin xyz="0 0 0" rpy="0 0 0" />
         <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
       </inertial>
@@ -803,7 +803,7 @@
       imu_suffix="gt"
       parent_link="${parent_link}"
       imu_topic="ground_truth/imu"
-      mass_imu_sensor="0.00001"
+      mass_imu_sensor="0.001"
       gyroscope_noise_density="0.0"
       gyroscope_random_walk="0.0"
       gyroscope_bias_correlation_time="1000.0"
@@ -812,7 +812,7 @@
       accelerometer_random_walk="0.0"
       accelerometer_bias_correlation_time="300.0"
       accelerometer_turn_on_bias_sigma="0.0">
-      <inertia ixx="0.00001" ixy="0.0" ixz="0.0" iyy="0.00001" iyz="0.0" izz="0.00001" />
+      <inertia ixx="0.000001" ixy="0.0" ixz="0.0" iyy="0.000001" iyz="0.0" izz="0.000001" />
       <origin xyz="0 0 0" rpy="0 0 0" />
     </xacro:imu_plugin_macro>
 
@@ -855,7 +855,7 @@
       imu_suffix=""
       parent_link="${parent_link}"
       imu_topic="imu"
-      mass_imu_sensor="0.015"
+      mass_imu_sensor="0.00015"
       gyroscope_noise_density="0.0003394"
       gyroscope_random_walk="0.000038785"
       gyroscope_bias_correlation_time="1000.0"
@@ -894,7 +894,7 @@
       magnetometer_suffix=""
       parent_link="${parent_link}"
       magnetometer_topic="magnetic_field"
-      mass_magnetometer_sensor="0.015"
+      mass_magnetometer_sensor="0.0015"
       ref_mag_north="0.000021493"
       ref_mag_east="0.000000815"
       ref_mag_down="0.000042795"
@@ -911,7 +911,7 @@
       pressure_sensor_suffix=""
       parent_link="${parent_link}"
       pressure_topic="air_pressure"
-      mass_pressure_sensor="0.015"
+      mass_pressure_sensor="0.0015"
       reference_altitude="500.0"
       pressure_variance="0.0">
       <inertia ixx="0.00001" ixy="0.0" ixz="0.0" iyy="0.00001" iyz="0.0" izz="0.00001" />
