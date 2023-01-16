@@ -35,7 +35,7 @@
 
   <xacro:property name="arm_length" value="0.281" /> <!-- [m] JDS: original value="0.215" --> 
 
-  <xacro:property name="rotor_offset_top" value="0.061" /> <!-- [m] JDS: prop height?: original "0.037"-->
+  <xacro:property name="rotor_offset_top" value="0.05" /> <!-- [m] JDS: prop height?: original "0.037"-->
   <xacro:property name="radius_rotor" value="0.1" /> <!-- [m] -->
 
   <xacro:property name="motor_constant" value="8.54858e-06" /> <!-- [kg m/s^2] -->

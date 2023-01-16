@@ -10,7 +10,6 @@
  * You may obtain a copy of the License at
  *
  *     http://www.apache.org/licenses/LICENSE-2.0
-
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -31,11 +30,9 @@ struct Axes {
   int roll;
   int pitch;
   int thrust;
-  int yaw; //JDS
   int roll_direction;
   int pitch_direction;
   int thrust_direction;
-  int yaw_direction; //JDS
 };
 
 struct Buttons {
@@ -51,7 +48,6 @@ struct Max {
   double v_xy;
   double roll;
   double pitch;
-  double yaw;  //JDS
   double rate_yaw;
   double thrust;
 };

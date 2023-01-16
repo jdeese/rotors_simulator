@@ -37,17 +37,13 @@ Joy::Joy() {
   control_msg_.thrust.z = 0;
   current_yaw_vel_ = 0;
 
-  pnh.param("axis_roll_", axes_.roll, 1); // JDS: original 0
-  pnh.param("axis_pitch_", axes_.pitch, 2); // JDS: original 1
-  pnh.param("axis_thrust_", axes_.thrust, 0); // JDS: original 2
-  pnh.param("axis_yaw_", axes_.yaw, 3);  //JDS: added
-
+  pnh.param("axis_roll_", axes_.roll, 0);
+  pnh.param("axis_pitch_", axes_.pitch, 1);
+  pnh.param("axis_thrust_", axes_.thrust, 2);
 
   pnh.param("axis_direction_roll", axes_.roll_direction, -1);
   pnh.param("axis_direction_pitch", axes_.pitch_direction, 1);
   pnh.param("axis_direction_thrust", axes_.thrust_direction, 1);
-  pnh.param("axis_direction_yaw", axes_.yaw_direction, 1); //JDS added this
-
 
   pnh.param("max_v_xy", max_.v_xy, 1.0);  // [m/s]
   pnh.param("max_roll", max_.roll, 10.0 * M_PI / 180.0);  // [rad]
@@ -59,13 +55,11 @@ Joy::Joy() {
 
   pnh.param("is_fixed_wing", is_fixed_wing_, false);
 
-  // JDS: replace yaw buttons with axis
   pnh.param("button_yaw_left_", buttons_.yaw_left, 3);
-  pnh.param("button_yaw_right_", buttons_.yaw_right, 4); 
-
+  pnh.param("button_yaw_right_", buttons_.yaw_right, 4);
   pnh.param("button_ctrl_enable_", buttons_.ctrl_enable, 5);
   pnh.param("button_ctrl_mode_", buttons_.ctrl_mode, 10);
-  pnh.param("button_takeoff_", buttons_.takeoff, 0); // JDS: original buttons_.takeoff, 7
+  pnh.param("button_takeoff_", buttons_.takeoff, 7);
   pnh.param("button_land_", buttons_.land, 8);
 
   namespace_ = nh_.getNamespace();
