@@ -40,7 +40,7 @@
   <xacro:macro name="multirotor_base_macro"
     params="robot_namespace mass body_width body_height use_mesh_file mesh_file *inertia">
     <link name="${robot_namespace}/base_link"></link>
-
+    
     <joint name="${robot_namespace}/base_joint" type="fixed">
       <origin xyz="0 0 0" rpy="0 0 0" />
       <parent link="${robot_namespace}/base_link" />
@@ -57,12 +57,16 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <xacro:if value="${use_mesh_file}">
+
+        <!-- JDS change to force mesh to check why not showing in rviz-->
+          <mesh filename="package://rotors_description/meshes/tyrion_nosensors.dae" scale="1 1 1" />
+
+          <!-- <xacro:if value="${use_mesh_file}">
             <mesh filename="${mesh_file}" scale="1 1 1" />
           </xacro:if>
           <xacro:unless value="${use_mesh_file}">
-            <box size="${body_width} ${body_width} ${body_height}"/> <!-- [m] [m] [m] -->
-          </xacro:unless>
+            <box size="${body_width} ${body_width} ${body_height}"/> [m] [m] [m] 
+          </xacro:unless> -->
         </geometry>
       </visual>
 

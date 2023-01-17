@@ -20,7 +20,9 @@
 -->
 
 <robot name="tyrion" xmlns:xacro="http://ros.org/wiki/xacro">
+
   <xacro:include filename="$(find rotors_description)/urdf/component_snippets.xacro" />
+  
   <!-- Instantiate tyrion "mechanics" -->
   <xacro:include filename="$(find rotors_description)/urdf/tyrion.xacro" />
 

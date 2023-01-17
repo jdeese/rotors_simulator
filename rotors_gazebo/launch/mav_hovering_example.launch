@@ -28,6 +28,10 @@
       <arg name="enable_logging" value="$(arg enable_logging)" />
       <arg name="enable_ground_truth" value="$(arg enable_ground_truth)" />
       <arg name="log_file" value="$(arg log_file)"/>
+      <!-- JDS spawning global coordinates: 0 0 0.4 to spawn at the corner; 4 0 0.4 to spawn next to door-->  
+      <arg name="x" value="4" /> 
+      <arg name="y" value="0" />
+      <arg name="z" value="0.4" />
     </include>
     <node name="lee_position_controller_node" pkg="rotors_control" type="lee_position_controller_node" output="screen">
       <rosparam command="load" file="$(find rotors_gazebo)/resource/lee_controller_$(arg mav_name).yaml" />

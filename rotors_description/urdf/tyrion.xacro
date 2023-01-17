@@ -25,7 +25,8 @@
   <xacro:property name="rotor_velocity_slowdown_sim" value="10" />
 
   <xacro:property name="use_mesh_file" value="true" />
-  <xacro:property name="mesh_file" value="package://rotors_description/meshes/tyrion.dae" />
+  <xacro:property name="mesh_file" value="package://rotors_description/meshes/tyrion_nosensors.dae" />
+  
   <xacro:property name="mass" value="1.5" /> <!-- [kg] -->
 
   <xacro:property name="body_width" value="0.1" /> <!-- [m] -->
@@ -90,7 +91,7 @@
     motor_number="0"
     rotor_drag_coefficient="${rotor_drag_coefficient}"
     rolling_moment_coefficient="${rolling_moment_coefficient}"
-    color="Red"
+    color="Grey"
     use_own_mesh="false"
     mesh="">
     <origin xyz="${cos30*arm_length} ${sin30*arm_length} ${rotor_offset_top}" rpy="0 0 0" />
@@ -112,7 +113,7 @@
     motor_number="1"
     rotor_drag_coefficient="${rotor_drag_coefficient}"
     rolling_moment_coefficient="${rolling_moment_coefficient}"
-    color="Blue"
+    color="Black"
     use_own_mesh="false"
     mesh="">
     <origin xyz="0 ${arm_length} ${rotor_offset_top}" rpy="0 0 0" />
@@ -133,7 +134,7 @@
     motor_number="2"
     rotor_drag_coefficient="${rotor_drag_coefficient}"
     rolling_moment_coefficient="${rolling_moment_coefficient}"
-    color="Blue"
+    color="Black"
     use_own_mesh="false"
     mesh="">
     <origin xyz="-${cos30*arm_length} ${sin30*arm_length} ${rotor_offset_top}" rpy="0 0 0" />
@@ -154,7 +155,7 @@
     motor_number="3"
     rotor_drag_coefficient="${rotor_drag_coefficient}"
     rolling_moment_coefficient="${rolling_moment_coefficient}"
-    color="Blue"
+    color="Black"
     use_own_mesh="false"
     mesh="">
     <origin xyz="-${cos30*arm_length} -${sin30*arm_length} ${rotor_offset_top}" rpy="0 0 0" />
@@ -176,7 +177,7 @@
     motor_number="4"
     rotor_drag_coefficient="${rotor_drag_coefficient}"
     rolling_moment_coefficient="${rolling_moment_coefficient}"
-    color="Blue"
+    color="Black"
     use_own_mesh="false"
     mesh="">
     <origin xyz="0 -${arm_length} ${rotor_offset_top}" rpy="0 0 0" />
@@ -198,7 +199,7 @@
     motor_number="5"
     rotor_drag_coefficient="${rotor_drag_coefficient}"
     rolling_moment_coefficient="${rolling_moment_coefficient}"
-    color="Red"
+    color="Grey"
     use_own_mesh="false"
     mesh="">
     <origin xyz="${cos30*arm_length} -${sin30*arm_length} ${rotor_offset_top}" rpy="0 0 0" />
