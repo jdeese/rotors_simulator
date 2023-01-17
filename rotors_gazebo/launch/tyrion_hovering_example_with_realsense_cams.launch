@@ -5,10 +5,11 @@
   <arg name="enable_ground_truth" default="true" />
   <arg name="log_file" default="$(arg mav_name)" />
 
-   <!-- JDS spawning coordinates -->  
-  <arg name="x_spawn" value="4" />
+   <!-- JDS spawning coordinates para tyrion_house z>081275-->  
+  <arg name="x_spawn" value="0" />
   <arg name="y_spawn" value="0" />
-  <arg name="z_spawn" value="0" />
+  <arg name="z_spawn" value="0.12" /> 
+  <arg name="yaw_spawn" value="20" /> 
 
   
   <env name="GAZEBO_MODEL_PATH" value="${GAZEBO_MODEL_PATH}:$(find rotors_gazebo)/models"/>
@@ -35,11 +36,11 @@
       <arg name="x" value="$(arg x_spawn)" />
       <arg name="y" value="$(arg y_spawn)" />
       <arg name="z" value="$(arg z_spawn)"/>
-
+      <arg name="yaw" value="$(arg yaw_spawn)" />
     </include>
 
   <!-- JDS static transform change to arg's -->
-  <node pkg="tf" type="static_transform_publisher" name="tf_camera_to_link" args="$(arg x_spawn) $(arg y_spawn) $(arg z_spawn) 0 0 0 /world /start 100"/>
+  <node pkg="tf" type="static_transform_publisher" name="tf_camera_to_link" args="$(arg x_spawn) $(arg y_spawn) $(arg z_spawn) 0 0 $(arg yaw_spawn) /world /start 100"/>
 
     <node name="lee_position_controller_node" pkg="rotors_control" type="lee_position_controller_node" output="screen">
       <rosparam command="load" file="$(find rotors_gazebo)/resource/lee_controller_$(arg mav_name).yaml" />
